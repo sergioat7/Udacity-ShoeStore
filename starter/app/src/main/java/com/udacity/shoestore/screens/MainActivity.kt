@@ -1,4 +1,4 @@
-package com.udacity.shoestore
+package com.udacity.shoestore.screens
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

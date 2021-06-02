@@ -3,7 +3,7 @@
  * Created by Sergio Aragonés on 29/5/2021
  */
 
-package com.udacity.shoestore.fragments
+package com.udacity.shoestore.screens.shoelist
 
 import android.os.Bundle
 import android.view.LayoutInflater
