@@ -33,6 +33,9 @@ class MainActivity : AppCompatActivity() {
                 R.id.loginFragment,
                 R.id.shoeListFragment
             ).build()
+        //This is for setting a menu in the toolbar. It must be placed before the setupActionBarWithNavController
+        setSupportActionBar(binding.toolbar)
+        //This is only for for updating toolbar title or other UI widgets with current navigation state
         binding.toolbar.setupWithNavController(navController, appBarConfiguration)
     }
 
