@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2021 Sergio Aragonés. All rights reserved.
+  ~ Created by Sergio Aragonés on 5/6/2021
+  -->
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_selected="true">
+        <shape android:innerRadius="0dp" android:shape="ring" android:thickness="8dp" android:useLevel="false">
+            <solid android:color="@color/colorPrimary" />
+        </shape>
+    </item>
+
+    <item>
+        <shape android:innerRadius="0dp" android:shape="ring" android:thickness="8dp" android:useLevel="false">
+            <solid android:color="@color/colorPrimary40" />
+        </shape>
+    </item>
+</selector>

@@ -10,4 +10,6 @@
     <string name="register">Register</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
+    <string name="welcomeTitle1">Welcome to ShoeStore, the best store for \'Shousers\'</string>
+    <string name="welcomeTitle2">In ShoeStore you can store all the shoes you want, as long as you do not close the app</string>
 </resources>

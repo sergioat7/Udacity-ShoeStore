@@ -9,4 +9,5 @@
     <dimen name="padding32dp">32dp</dimen>
     <dimen name="radius12dp">12dp</dimen>
     <dimen name="noPadding">0dp</dimen>
+    <dimen name="textSize24sp">24sp</dimen>
 </resources>
