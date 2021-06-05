@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -12,8 +12,29 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
 
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
+
+    <style name="Widget.ShoeStore.Button.Primary" parent="Widget.MaterialComponents.Button">
+        <item name="shapeAppearance">@style/ShapeAppearance.ShoeStore.Rounded</item>
+        <item name="fontFamily">@font/roboto_bold</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:insetTop">@dimen/noPadding</item>
+        <item name="android:insetBottom">@dimen/noPadding</item>
+    </style>
+
+    <style name="ShapeAppearance.ShoeStore.Rounded" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/radius12dp</item>
+    </style>
+
+    <style name="Widget.ShoeStore.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="fontFamily">@font/roboto_regular</item>
+    </style>
+
+    <style name="Widget.ShoeStore.EditText" parent="Widget.AppCompat.EditText">
+        <item name="fontFamily">@font/roboto_regular</item>
+    </style>
 
 </resources>
