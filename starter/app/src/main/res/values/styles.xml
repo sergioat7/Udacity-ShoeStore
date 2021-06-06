@@ -44,4 +44,23 @@
         <item name="android:textSize">@dimen/textSize24sp</item>
     </style>
 
+    <style name="Widget.ShoeStore.TextView.Shoe">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="Widget.ShoeStore.TextView.Shoe.Name">
+        <item name="fontFamily">@font/roboto_bold</item>
+        <item name="android:textSize">@dimen/textSize24sp</item>
+    </style>
+
+    <style name="Widget.ShoeStore.TextView.Shoe.Company">
+        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">@dimen/textSize16sp</item>
+    </style>
+
+    <style name="Widget.ShoeStore.TextView.Shoe.Size">
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:textSize">@dimen/textSize32sp</item>
+    </style>
+
 </resources>

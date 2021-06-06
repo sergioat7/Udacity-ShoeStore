@@ -6,9 +6,12 @@
 
 <resources>
     <dimen name="margin16dp">16dp</dimen>
+    <dimen name="margin4dp">4dp</dimen>
     <dimen name="padding32dp">32dp</dimen>
     <dimen name="padding16dp">16dp</dimen>
     <dimen name="radius12dp">12dp</dimen>
     <dimen name="noPadding">0dp</dimen>
+    <dimen name="textSize32sp">32sp</dimen>
     <dimen name="textSize24sp">24sp</dimen>
+    <dimen name="textSize16sp">16sp</dimen>
 </resources>
