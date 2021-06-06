@@ -36,6 +36,7 @@ class ShoeListFragment : Fragment() {
                 itemBinding.shoe = shoe
                 binding.linearLayoutShoes.addView(itemBinding.root)
             }
+            binding.imageViewNoShoes.visibility = if(shoes.isEmpty()) View.VISIBLE else View.GONE
         })
 
         setHasOptionsMenu(true)
