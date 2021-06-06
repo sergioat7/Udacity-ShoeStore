@@ -6,10 +6,10 @@
 package com.udacity.shoestore.screens.instructions
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentInstructionsBinding
 
 class InstructionsFragment : Fragment() {
@@ -21,10 +21,20 @@ class InstructionsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentInstructionsBinding.inflate(layoutInflater, container, false)
+        setHasOptionsMenu(true)
         return binding.root
     }
 
-    companion object {
-        fun newInstance() = InstructionsFragment()
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.skip_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        if (item.itemId == R.id.skip) {
+            findNavController().navigate(R.id.action_instructionsFragment_to_shoeListFragment)
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
