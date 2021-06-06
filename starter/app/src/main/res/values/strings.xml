@@ -15,4 +15,42 @@
     <string name="skip">Skip</string>
     <string name="instructionsTitle1">Make a list of shoes, and save them in the app</string>
     <string name="instructionsTitle2">Add a new shoe with the name you want</string>
+    <string name="shoe_name">Shoe name</string>
+    <string name="shoe_company">Shoe company</string>
+    <string name="shoe_description">Shoe description</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="size">Size</string>
+    <string-array name="sizes">
+        <item>35</item>
+        <item>35</item>
+        <item>35.5</item>
+        <item>36</item>
+        <item>36.5</item>
+        <item>37</item>
+        <item>37.5</item>
+        <item>38</item>
+        <item>38.5</item>
+        <item>39</item>
+        <item>39.5</item>
+        <item>40</item>
+        <item>40.5</item>
+        <item>41</item>
+        <item>41.5</item>
+        <item>42</item>
+        <item>42.5</item>
+        <item>43</item>
+        <item>43.5</item>
+        <item>44</item>
+        <item>44.5</item>
+        <item>45</item>
+        <item>45.5</item>
+        <item>46</item>
+        <item>46.5</item>
+        <item>47</item>
+        <item>47.5</item>
+        <item>48</item>
+        <item>49.5</item>
+        <item>50</item>
+    </string-array>
 </resources>

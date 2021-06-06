@@ -9,7 +9,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeDetailBinding
 
 class ShoeDetailFragment : Fragment() {
@@ -21,10 +24,28 @@ class ShoeDetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentShoeDetailBinding.inflate(layoutInflater, container, false)
+
+        with(binding) {
+
+            val adapter = ArrayAdapter(
+                requireContext(),
+                R.layout.list_item,
+                resources.getStringArray(R.array.sizes)
+            )
+            autoCompleteTextViewShoeSize.setAdapter(adapter)
+            buttonCancel.setOnClickListener {
+                findNavController().navigateUp()
+            }
+            buttonSave.setOnClickListener {
+                saveShoe()
+            }
+        }
+
         return binding.root
     }
 
-    companion object {
-        fun newInstance() = ShoeDetailFragment()
+    private fun saveShoe() {
+
+        findNavController().navigateUp()
     }
 }
