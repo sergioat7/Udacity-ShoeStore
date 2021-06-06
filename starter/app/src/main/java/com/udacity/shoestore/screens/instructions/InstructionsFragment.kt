@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.tabs.TabLayoutMediator
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentInstructionsBinding
 
@@ -21,6 +22,11 @@ class InstructionsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentInstructionsBinding.inflate(layoutInflater, container, false)
+        with(binding) {
+            viewPager2Instructions.adapter = InstructionsPagerAdapter(this@InstructionsFragment)
+            TabLayoutMediator(tabLayoutInstructions, viewPager2Instructions) { _, _ ->
+            }.attach()
+        }
         setHasOptionsMenu(true)
         return binding.root
     }

@@ -13,4 +13,6 @@
     <string name="welcomeTitle1">Welcome to ShoeStore, the best store for \'Shousers\'</string>
     <string name="welcomeTitle2">In ShoeStore you can store all the shoes you want, as long as you do not close the app</string>
     <string name="skip">Skip</string>
+    <string name="instructionsTitle1">Make a list of shoes, and save them in the app</string>
+    <string name="instructionsTitle2">Add a new shoe with the name you want</string>
 </resources>
