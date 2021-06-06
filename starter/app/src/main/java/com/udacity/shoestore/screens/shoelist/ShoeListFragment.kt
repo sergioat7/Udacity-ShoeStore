@@ -7,20 +7,37 @@ package com.udacity.shoestore.screens.shoelist
 
 import android.os.Bundle
 import android.view.*
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
+import com.udacity.shoestore.databinding.ItemShoeBinding
 
 class ShoeListFragment : Fragment() {
 
     private lateinit var binding: FragmentShoeListBinding
+    private val viewModel: ShoesViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentShoeListBinding.inflate(layoutInflater, container, false)
+
+        viewModel.shoes.observe(viewLifecycleOwner, { shoes ->
+
+            binding.linearLayoutShoes.removeAllViews()
+            for (shoe in shoes) {
+
+                val itemBinding: ItemShoeBinding =
+                    DataBindingUtil.inflate(inflater, R.layout.item_shoe, container, false)
+                itemBinding.shoe = shoe
+                binding.linearLayoutShoes.addView(itemBinding.root)
+            }
+        })
+
         setHasOptionsMenu(true)
         return binding.root
     }
