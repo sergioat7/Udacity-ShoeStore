@@ -12,7 +12,11 @@ import com.udacity.shoestore.models.Shoe
 
 class ShoesViewModel : ViewModel() {
 
-    private var _shoes = MutableLiveData<List<Shoe>>()
+    private var _shoes = MutableLiveData<MutableList<Shoe>>()
 
-    val shoes: LiveData<List<Shoe>> = _shoes
+    val shoes: LiveData<MutableList<Shoe>> = _shoes
+
+    fun addShoe(shoe: Shoe) {
+        _shoes.value?.add(shoe)
+    }
 }

@@ -11,13 +11,17 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeDetailBinding
+import com.udacity.shoestore.models.Shoe
+import com.udacity.shoestore.screens.shoelist.ShoesViewModel
 
 class ShoeDetailFragment : Fragment() {
 
     private lateinit var binding: FragmentShoeDetailBinding
+    private val viewModel: ShoesViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -46,6 +50,14 @@ class ShoeDetailFragment : Fragment() {
 
     private fun saveShoe() {
 
+        viewModel.addShoe(
+            Shoe(
+                binding.textInputEditTextShoeName.text.toString(),
+                binding.autoCompleteTextViewShoeSize.text.toString().toDoubleOrNull() ?: 0.0,
+                binding.textInputEditTextShoeCompany.text.toString(),
+                binding.textInputEditTextShoeDescription.text.toString()
+            )
+        )
         findNavController().navigateUp()
     }
 }
