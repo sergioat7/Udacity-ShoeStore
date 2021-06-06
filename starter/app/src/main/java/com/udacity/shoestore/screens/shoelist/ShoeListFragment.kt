@@ -10,6 +10,7 @@ import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
@@ -26,6 +27,12 @@ class ShoeListFragment : Fragment() {
     ): View {
         binding = FragmentShoeListBinding.inflate(layoutInflater, container, false)
 
+        binding.floatingActionButton.setOnClickListener(
+            Navigation.createNavigateOnClickListener(
+                ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailFragment()
+            )
+        )
+
         viewModel.shoes.observe(viewLifecycleOwner, { shoes ->
 
             binding.linearLayoutShoes.removeAllViews()
@@ -36,7 +43,7 @@ class ShoeListFragment : Fragment() {
                 itemBinding.shoe = shoe
                 binding.linearLayoutShoes.addView(itemBinding.root)
             }
-            binding.imageViewNoShoes.visibility = if(shoes.isEmpty()) View.VISIBLE else View.GONE
+            binding.imageViewNoShoes.visibility = if (shoes.isEmpty()) View.VISIBLE else View.GONE
         })
 
         setHasOptionsMenu(true)
