@@ -16,6 +16,7 @@
 
     </data>
 
+    <!--  ConstraintLayout for better performance  -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,6 +24,7 @@
         android:layout_marginBottom="@dimen/margin4dp"
         android:background="@drawable/view_rounded">
 
+        <!--  LinearLayout for simple alignment on the left of the size text  -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
