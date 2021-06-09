@@ -8,6 +8,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="shoe"
+            type="com.udacity.shoestore.models.Shoe" />
+
+    </data>
+
     <!--  ConstraintLayout for better performance  -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -29,7 +37,8 @@
                 style="@style/Widget.ShoeStore.EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/shoe_name" />
+                android:hint="@string/shoe_name"
+                android:text="@={shoe.name}" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -49,15 +58,16 @@
                 style="@style/Widget.ShoeStore.EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/shoe_company" />
+                android:hint="@string/shoe_company"
+                android:text="@={shoe.company}" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayoutShoeSize"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin4dp"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             app:layout_constraintBottom_toBottomOf="@+id/textInputLayoutShoeCompany"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -68,9 +78,8 @@
                 android:id="@+id/autoCompleteTextViewShoeSize"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="none"
                 android:hint="@string/size"
-                />
+                android:inputType="none" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -89,7 +98,8 @@
                 style="@style/Widget.ShoeStore.EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/shoe_description" />
+                android:hint="@string/shoe_description"
+                android:text="@={shoe.description}" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!--  LinearLayout for simple button alignment  -->

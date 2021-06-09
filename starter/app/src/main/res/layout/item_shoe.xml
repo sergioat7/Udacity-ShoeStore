@@ -24,41 +24,44 @@
         android:layout_marginBottom="@dimen/margin4dp"
         android:background="@drawable/view_rounded">
 
-        <!--  LinearLayout for simple alignment on the left of the size text  -->
-        <LinearLayout
+        <TextView
+            android:id="@+id/textViewName"
+            style="@style/Widget.ShoeStore.TextView.Shoe.Name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/margin16dp"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/textViewShoeSize"
+            android:text="@{shoe.name}"
+            app:layout_constraintEnd_toStartOf="@+id/textViewSize"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <TextView
-                style="@style/Widget.ShoeStore.TextView.Shoe.Name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@{shoe.name}"
-                tools:text="Nike Air"/>
-
-            <TextView
-                style="@style/Widget.ShoeStore.TextView.Shoe.Company"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@{shoe.company}"
-                tools:text="Nike"/>
-
-            <TextView
-                style="@style/Widget.ShoeStore.TextView.Shoe.Company"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@{shoe.description}"
-                tools:text="For men"/>
-        </LinearLayout>
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Nike Air" />
 
         <TextView
-            android:id="@+id/textViewShoeSize"
+            android:id="@+id/textViewCompany"
+            style="@style/Widget.ShoeStore.TextView.Shoe.Company"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin16dp"
+            android:text="@{shoe.company}"
+            app:layout_constraintEnd_toStartOf="@+id/textViewSize"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewName"
+            tools:text="Nike" />
+
+        <TextView
+            style="@style/Widget.ShoeStore.TextView.Shoe.Company"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin16dp"
+            android:text="@{shoe.description}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textViewSize"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCompany"
+            tools:text="For men" />
+
+        <TextView
+            android:id="@+id/textViewSize"
             style="@style/Widget.ShoeStore.TextView.Shoe.Size"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -29,6 +29,13 @@ class ShoeDetailFragment : Fragment() {
     ): View {
         binding = FragmentShoeDetailBinding.inflate(layoutInflater, container, false)
 
+        val newShoe = Shoe(
+            "",
+            0.0,
+            "",
+            ""
+        )
+
         with(binding) {
 
             val adapter = ArrayAdapter(
@@ -41,23 +48,14 @@ class ShoeDetailFragment : Fragment() {
                 findNavController().navigateUp()
             }
             buttonSave.setOnClickListener {
-                saveShoe()
+                newShoe.size =
+                    binding.autoCompleteTextViewShoeSize.text.toString().toDoubleOrNull() ?: 0.0
+                viewModel.addShoe(newShoe)
+                findNavController().navigateUp()
             }
+            shoe = newShoe
         }
 
         return binding.root
-    }
-
-    private fun saveShoe() {
-
-        viewModel.addShoe(
-            Shoe(
-                binding.textInputEditTextShoeName.text.toString(),
-                binding.autoCompleteTextViewShoeSize.text.toString().toDoubleOrNull() ?: 0.0,
-                binding.textInputEditTextShoeCompany.text.toString(),
-                binding.textInputEditTextShoeDescription.text.toString()
-            )
-        )
-        findNavController().navigateUp()
     }
 }
